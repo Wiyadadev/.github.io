@@ -160,7 +160,7 @@ h1{font-size:clamp(2.3rem,11vw,3.6rem)}
 <ul class="nav-links">
 <li><a href="index.html" class=" ">Home</a></li>
 <li><a href="ai-solutions.html" class=" ">AI Solutions</a></li>
-<li><a href="products.html" class=" ">Products</a></li>
+<li><a href="portfolio.html" class=" ">Portfolio</a></li>
 <li><a href="demo.html" class="active">Demo</a></li>
 <li><a href="contact.html" class=" ">Contact</a></li>
 </ul>
