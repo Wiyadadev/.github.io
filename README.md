@@ -1,116 +1,78 @@
-# AI Automation Project
-<img width="930" height="408" alt="ai automation" src="https://github.com/user-attachments/assets/1f0b10da-84b6-4468-836f-d1479758c884" />
+# Vyada.System
 
-## Overview
+A 5-page static website built as a sales-closing tool, not just a portfolio. Every page is designed to move a visitor toward one outcome: contact.
 
-This project is designed to automate business workflows using Artificial Intelligence (AI). The system helps reduce manual tasks, improve efficiency, and streamline operations through intelligent automation.
+**Live pages:** `index.html` · `ai-solutions.html` · `portfolio.html` · `demo.html` · `contact.html`
 
-## Features
+---
 
-* Automated workflow execution
-* AI-powered decision making
-* Data processing and analysis
-* API integrations
-* Real-time notifications
-* Scalable and modular architecture
+## Site map
 
-## Technologies Used
+| Page | File | Purpose |
+|---|---|---|
+| Home | `index.html` | Who I am, what business problems I solve, hub links to the other 4 pages |
+| AI Solutions | `ai-solutions.html` | All 4 services in detail (AI Agent, Website Dev, Automation, Data & AI Workflow), each with a "Get This →" CTA |
+| Portfolio | `portfolio.html` | All 9 projects, each with **View Code** (GitHub) and/or **Watch Demo** links |
+| Demo | `demo.html` | Short video demo of every project, playlist-style, deep-linkable per project |
+| Contact | `contact.html` | Intent-based quick-contact buttons + prominent email/socials — built to convert, not just inform |
 
-* Python
-* FastAPI
-* OpenAI API
-* PostgreSQL
-* Docker
-* GitHub Actions
+Every page except Contact ends with a closing CTA panel pointing back to `contact.html`.
 
-## Project Structure
+---
 
-```bash
-project/
-├── app/
-│   ├── agents/
-│   ├── services/
-│   ├── api/
-│   └── utils/
-├── data/
-├── tests/
-├── requirements.txt
-├── .env.example
-└── README.md
+## Design system
+
+- **Background:** `#0a0a0a`
+- **Accent (lime):** `#C6F135`
+- **Card surface:** `#161616` · **Surface:** `#111`
+- **Text:** `#f0f0f0` · **Muted:** `#888`
+- **Display font:** [Syne](https://fonts.google.com/specimen/Syne) (700/800) — headings, titles, buttons
+- **Body font:** [DM Sans](https://fonts.google.com/specimen/DM+Sans) (300–500) — paragraphs, nav, tags
+
+Loaded via Google Fonts CDN in the `<head>` of every page — no build step required.
+
+---
+
+## File structure
+
+```
+vyada-system/
+├── index.html          Home
+├── ai-solutions.html   AI Solutions
+├── portfolio.html      Portfolio
+├── demo.html           Demo
+└── contact.html        Contact
 ```
 
-## Installation
+Each file is fully self-contained (HTML + CSS + JS inline) — no external dependencies besides the Google Fonts link, so you can open any file directly in a browser or drop the folder onto any static host.
 
-1. Clone the repository
+---
 
-```bash
-git clone <repository-url>
-cd project
-```
+## Things to finish before launch
 
-2. Create a virtual environment
+- [ ] **Demo videos** — `demo.html` currently shows an `alert()` placeholder on each row (see `data-demo` attribute + `<script>` at the bottom of the file). Swap that for a real video embed, YouTube link, or modal per project.
+- [ ] **Contact email** — currently `Devwiyada1@gmail.com`, used across `contact.html`, `ai-solutions.html` CTAs, and the footer socials. Update if this changes.
+- [ ] **GitHub links** — some `portfolio.html` cards point to `https://github.com/Wiyadadev` generically rather than the specific repo. Point each to its exact repo URL.
+- [ ] **Analytics** — no tracking is wired up. Add Plausible/GA/Meta Pixel if you want to measure which CTA actually converts.
 
-```bash
-python -m venv venv
-```
+---
 
-3. Activate the environment
+## Customizing
 
-Windows:
+- **Colors / fonts:** all defined as CSS variables at the top of each file's `<style>` block (`:root { --bg; --accent; --text; ... }`). Change once per file, or find-and-replace across all 5.
+- **Nav / footer:** identical across all 5 pages by design — if you rename a page or add a 6th, update the `<nav>` block and the `<ul class="nav-links">` in every file.
+- **Adding a new product:** copy a `.card` block in `portfolio.html` and a `.channel` block in `demo.html`, keep the `id`/`data-demo` values in sync so the "Watch Demo" links deep-link correctly.
 
-```bash
-venv\Scripts\activate
-```
+---
 
-Linux/Mac:
+## Deployment
 
-```bash
-source venv/bin/activate
-```
+No build step — this is plain static HTML/CSS/JS. Drop the folder into:
 
-4. Install dependencies
+- **Netlify / Vercel:** drag-and-drop the folder, or connect the repo
+- **GitHub Pages:** push to a repo, enable Pages on the `main` branch
+- **Any static host:** upload the 5 files as-is
 
-```bash
-pip install -r requirements.txt
-```
+---
 
-## Configuration
-
-Create a `.env` file and add the required environment variables:
-
-```env
-OPENAI_API_KEY=your_api_key
-DATABASE_URL=your_database_url
-```
-
-## Running the Application
-
-```bash
-python main.py
-```
-
-Or with FastAPI:
-
-```bash
-uvicorn main:app --reload
-```
-
-## Use Cases
-
-* Customer support automation
-* Lead generation
-* Data extraction and processing
-* AI chatbot systems
-* Business process automation
-* Report generation
-
-## Future Improvements
-
-* Multi-agent architecture
-* Advanced analytics dashboard
-* Workflow builder UI
-* Additional AI model integrations
-
-## License
-
-This project is licensed under the MIT License.
+Built by **Vyada.System** — AI agents, automation, and digital products that take repetitive work off your plate.
